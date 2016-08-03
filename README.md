@@ -1,6 +1,15 @@
 # React Quiz
-
+Build the image below as a react app.  
+![React Quiz](./images/react_quiz.png)
 ### Specs
+1. Each Increment button should increment by one
+2. The increments should increment independently
+3. The total of the two increments should be displayed in the top total
+
+## Notes
++ Testing and state management decisions are yours
++ Bootstrap has been included to help with layout
++ Styles are loose
 
 ### Getting Started
 
