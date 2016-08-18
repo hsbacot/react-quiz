@@ -1,5 +1,5 @@
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css")
-// require("../styles/main.css")
+require("../styles/main.css")
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import NumericDisplayBox from './NumericDisplayBox';
@@ -38,23 +38,25 @@ class App extends Component {
 
   render() {
     return (
-      <div className='container'>
+      <div className='panel panel-default'>
         <div className='row'>
           <NumericDisplayBox
 						label='Total Value'
 						value={this.state.total} />
         </div>
-        <div className='row'>
-					<NumericDisplayBox
-						value={this.state.left} />
-          <IncrementButton
-            componentId='left'
-            increment={this.handleIncrement} />
-					<NumericDisplayBox
-						value={this.state.right} />
-					<IncrementButton
-            componentId='right'
-            increment={this.handleIncrement} />
+        <div className='row panel-body'>
+					<div className='col-md-6 text-center'>
+						<IncrementButton
+							componentId='left'
+							currentValue={this.state.left}
+							increment={this.handleIncrement} />
+					</div>
+					<div className='col-md-6 text-center'>
+						<IncrementButton
+							componentId='right'
+							currentValue={this.state.right}
+							increment={this.handleIncrement} />
+					</div>
         </div>
       </div>
     );
