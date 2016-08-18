@@ -14,10 +14,10 @@ class NumericDisplayBox extends Component {
 
   render() {
     return (
-      <span className='col-md-12 text-center'>
-        <h1>{this.props.label}</h1>
-        <h2>{this.props.value}</h2>
-      </span>
+      <div className='text-center'>
+        <span>{this.props.label}</span>
+        <span>{this.props.value}</span>
+      </div>
     );
   }
 }

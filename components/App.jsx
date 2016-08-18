@@ -38,13 +38,15 @@ class App extends Component {
 
   render() {
     return (
-      <div className='panel panel-default'>
-        <div className='row'>
-          <NumericDisplayBox
-						label='Total Value'
-						value={this.state.total} />
+      <div className='panel panel-primary'>
+        <div className='panel-heading'>
+					<h2>
+						<NumericDisplayBox
+							label='Total Value:&nbsp;'
+							value={this.state.total} />
+					</h2>
         </div>
-        <div className='row panel-body'>
+        <div className='panel-body'>
 					<div className='col-md-6 text-center'>
 						<IncrementButton
 							componentId='left'
