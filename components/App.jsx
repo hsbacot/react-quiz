@@ -1,7 +1,8 @@
 require("../node_modules/bootstrap/dist/css/bootstrap.min.css")
+// require("../styles/main.css")
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import SumBox from './SumBox';
+import NumericDisplayBox from './NumericDisplayBox';
 import IncrementButton from './IncrementButton';
 
 class App extends Component {
@@ -13,11 +14,11 @@ class App extends Component {
 		right: 0
 	};
 
+	constructor() {
+     super()
 	//We could use ES6 constructor and lexical method binding like so:
-	// constructor() {
-  //    super();
 	// 	 this.handleIncrement = this.handleIncrement.bind(this);
-  // }
+  }
 
 	//OR we can do this ES7 combine property intialization with fat arrow preservation of context
   handleIncrement = (event) => {
@@ -39,16 +40,20 @@ class App extends Component {
     return (
       <div className='container'>
         <div className='row'>
-          <SumBox totalValue={this.state.total} />
+          <NumericDisplayBox
+						label='Total Value'
+						value={this.state.total} />
         </div>
         <div className='row'>
+					<NumericDisplayBox
+						value={this.state.left} />
           <IncrementButton
             componentId='left'
-            currentValue={this.state.left}
             increment={this.handleIncrement} />
-          <IncrementButton
+					<NumericDisplayBox
+						value={this.state.right} />
+					<IncrementButton
             componentId='right'
-            currentValue={this.state.right}
             increment={this.handleIncrement} />
         </div>
       </div>
